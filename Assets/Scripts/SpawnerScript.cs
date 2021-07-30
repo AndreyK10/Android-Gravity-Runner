@@ -27,6 +27,5 @@ public class SpawnerScript : MonoBehaviour
             yield return new WaitForSeconds(spawnDelay);
         }
     }
-
 }
 

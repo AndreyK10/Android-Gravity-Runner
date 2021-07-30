@@ -61,6 +61,5 @@ public class GameplayController : MonoBehaviour
             highScoreText.text = "HIGHSCORE: " + PlayerPrefs.GetInt(PREFS_HIGHSCORE);
         }
     }
-
 }
 

@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public static bool isDead;
-
+    private bool touchedLastFrame = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -14,9 +14,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0)
+        if (touchedLastFrame && Input.touchCount == 0)
         {
-            Jump();
+            touchedLastFrame = false;
+        }
+        else if (!touchedLastFrame && Input.touchCount > 0)
+        {
+            Jump();            
+            touchedLastFrame = true;
         }
     }
 
@@ -33,6 +38,4 @@ public class PlayerController : MonoBehaviour
             isDead = true;
         }
     }
-
-
 }
