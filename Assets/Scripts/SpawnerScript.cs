@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnerScript : MonoBehaviour
@@ -21,6 +20,7 @@ public class SpawnerScript : MonoBehaviour
 
     private IEnumerator StartSpawning()
     {
+        yield return new WaitForSeconds(spawnDelay);
         while (true)
         {
             Instantiate(obstaclePrefab[Random.Range(0, obstaclePrefab.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);

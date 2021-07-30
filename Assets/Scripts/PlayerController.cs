@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+    public static bool isDead;
 
     private void Awake()
     {
@@ -26,5 +24,15 @@ public class PlayerController : MonoBehaviour
     {
         rb.gravityScale *= -1;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Obstacle")
+        {
+            gameObject.SetActive(false);            
+            isDead = true;
+        }
+    }
+
 
 }
