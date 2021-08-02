@@ -32,12 +32,14 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.gravityScale *= -1;
+        AudioManager.instance.PlaySound(AudioManager.JUMP_SOUND);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Obstacle")
         {
+            AudioManager.instance.PlaySound(AudioManager.GAME_OVER_SOUND);
             gameObject.SetActive(false);            
             isDead = true;
         }

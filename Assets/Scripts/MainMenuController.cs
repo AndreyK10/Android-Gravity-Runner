@@ -14,7 +14,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void NewGame()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1;        
         SceneManager.LoadScene(1);
     }
 
@@ -27,4 +27,20 @@ public class MainMenuController : MonoBehaviour
         PlayerPrefs.DeleteAll();
         highScoretext.text = "HIGHSCORE: " + PlayerPrefs.GetInt(GameplayController.PREFS_HIGHSCORE);
     }
+
+    public void PlayButtonSound()
+    {
+        AudioManager.instance.PlaySound(AudioManager.BUTTON_SOUND);
+    }
+
+    public void MuteMusic()
+    {
+        AudioManager.instance.MuteMusic(AudioManager.BGMUSIC);
+    }
+
+    public void MuteSound()
+    {
+        AudioManager.instance.MuteSound(AudioManager.BUTTON_SOUND, AudioManager.GAME_OVER_SOUND, AudioManager.JUMP_SOUND);
+    }
+
 }
