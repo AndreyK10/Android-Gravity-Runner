@@ -7,11 +7,17 @@ using TMPro;
 public class GameplayController : MonoBehaviour
 {
     public TextMeshProUGUI scoreText, gameOverScoreText, highScoreText;
-    public Button pauseButton;
+    public Button pauseButton, jumpButton;
     public GameObject pauseScreen, gameOverScreen;
 
     public const string PREFS_HIGHSCORE = "HS_v1.0";
-        
+
+    public static bool isPaused { get; private set; }
+
+    private void Start()
+    {
+        isPaused = false;
+    }
 
     private void Update()
     {
@@ -24,6 +30,7 @@ public class GameplayController : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        isPaused = true;
         pauseButton.gameObject.SetActive(false);
         pauseScreen.SetActive(true);
     }
@@ -31,6 +38,7 @@ public class GameplayController : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
+        isPaused = false;
         pauseButton.gameObject.SetActive(true);
         pauseScreen.SetActive(false);
     }
@@ -47,6 +55,7 @@ public class GameplayController : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
+        jumpButton.gameObject.SetActive(false);
         gameOverScreen.gameObject.SetActive(true);
         pauseButton.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);

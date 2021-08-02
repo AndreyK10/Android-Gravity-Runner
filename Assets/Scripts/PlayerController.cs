@@ -5,34 +5,18 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public static bool isDead;
-    private bool touchedLastFrame = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-    void Update()
+    public void Jump()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Jump();
-        //}
-        if (touchedLastFrame && Input.touchCount == 0)
+        if (!GameplayController.isPaused)
         {
-            touchedLastFrame = false;
+            rb.gravityScale *= -1;
+            AudioManager.instance.PlaySound(AudioManager.JUMP_SOUND);
         }
-        else if (!touchedLastFrame && Input.touchCount > 0)
-        {
-            Jump();            
-            touchedLastFrame = true;
-        }
-    }
-
-    private void Jump()
-    {
-        rb.gravityScale *= -1;
-        AudioManager.instance.PlaySound(AudioManager.JUMP_SOUND);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

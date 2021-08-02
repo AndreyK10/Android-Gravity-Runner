@@ -1965,28 +1965,28 @@ MonoBehaviour:
   sounds:
   - name: BGMusic
     clip: {fileID: 8300000, guid: 07f391589664f4e85904fa28802b4aa8, type: 3}
-    volume: 0.2
+    volume: 0.3
     pitch: 1
     loop: 1
     mute: 0
     source: {fileID: 0}
   - name: ButtonSound
     clip: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     loop: 0
     mute: 0
     source: {fileID: 0}
   - name: JumpSound
     clip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     loop: 0
     mute: 0
     source: {fileID: 0}
   - name: GameOverSound
     clip: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     loop: 0
     mute: 0
