@@ -6,7 +6,7 @@ public class ObstacleScript : MonoBehaviour
 
     void Start()
     {
-        obstacleSpeed = Random.Range(15f, 30f);
+        obstacleSpeed = Random.Range(20f, 35f);
     }
 
     void Update()

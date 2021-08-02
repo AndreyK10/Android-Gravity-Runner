@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     public const string GAME_OVER_SOUND = "GameOverSound";
     public const string BGMUSIC = "BGMusic";
 
+    public static bool isSoundMuted;
+    public static bool isMusicMuted;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -32,6 +35,8 @@ public class AudioManager : MonoBehaviour
             sound.source.loop = sound.loop;
             sound.source.mute = sound.mute;
         }
+        isSoundMuted = false;
+        isMusicMuted = false;
     }
     private void Start()
     {
@@ -50,6 +55,7 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null) return;
         s.source.mute = !s.source.mute;
+        isMusicMuted = !isMusicMuted;
     }
 
     public void MuteSound(params string[] name)
@@ -60,6 +66,6 @@ public class AudioManager : MonoBehaviour
             if (s == null) return;
             s.source.mute = !s.source.mute;
         }
+        isSoundMuted = !isSoundMuted;
     }
-
 }
