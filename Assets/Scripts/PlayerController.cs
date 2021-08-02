@@ -14,10 +14,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Jump();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Jump();
+        //}
         if (touchedLastFrame && Input.touchCount == 0)
         {
             touchedLastFrame = false;
