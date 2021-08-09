@@ -3,18 +3,18 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     private float score;
     [SerializeField] private float scorePerSecond;
     public static int intScore { get; private set; }
 
-    void Start()
+    private void Start()
     {
         score = 0f;
     }
 
-    void Update()
+    private void Update()
     {
         score += scorePerSecond * Time.deltaTime;
         intScore = (int)score;

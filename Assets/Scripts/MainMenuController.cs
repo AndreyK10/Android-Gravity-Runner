@@ -4,8 +4,8 @@ using TMPro;
 
 public class MainMenuController : MonoBehaviour
 {
-    public TextMeshProUGUI highScoretext, highScoreButtonText;
-    public GameObject mainMenuScreen;
+    [SerializeField] private TextMeshProUGUI highScoretext, highScoreButtonText;
+    [SerializeField] private GameObject mainMenuScreen;
 
     private void Start()
     {

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SpawnerScript : MonoBehaviour
 {
-    public GameObject[] spawnPoints;
-    public GameObject[] obstaclePrefab;
+    [SerializeField] private GameObject[] spawnPoints;
+    [SerializeField] private GameObject[] obstaclePrefab;
     private float spawnDelay;
 
 

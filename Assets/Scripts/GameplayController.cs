@@ -6,9 +6,9 @@ using TMPro;
 
 public class GameplayController : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText, gameOverScoreText, highScoreText;
-    public Button pauseButton, jumpButton;
-    public GameObject pauseScreen, gameOverScreen;
+    [SerializeField] private TextMeshProUGUI scoreText, gameOverScoreText, highScoreText;
+    [SerializeField] private Button pauseButton, jumpButton;
+    [SerializeField] private GameObject pauseScreen, gameOverScreen;
 
     public const string PREFS_HIGHSCORE = "HS_v1.0";
 
